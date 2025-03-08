@@ -45,7 +45,7 @@ def main():
     elif arg.command == "delete":
         tasks.delete_task(arg.id)
     elif arg.command == "mark-done" or arg.command == "mark-in-progress" or arg.command == "mark-todo":
-        tasks.update_status(arg.id, arg.command)
+        tasks.update_status(arg.id, arg.command[5::1])
     elif arg.command == "list":
         tasks.list_tasks(arg.status)
 

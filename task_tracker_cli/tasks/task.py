@@ -43,14 +43,7 @@ class Task:
     def update_status(self, key, value):
         if not any(task['id'] == key for task in self.json_data):
             raise ValueError(f"Task with id {key} not found")
-        if value == "mark-todo":
-            value = "todo"
-        elif value == "mark-done":
-            value = "done"
-        elif value == "mark-in-progress":
-            value = "in-progress"
-        else:
-            value = " "
+
 
         self.json_data = [{**task, 'status': value, 'updatedAt': datetime.now().isoformat()} if task['id'] == key else task for task in self.json_data]
         json.save_json(self.json_data)

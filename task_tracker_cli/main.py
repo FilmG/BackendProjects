@@ -3,13 +3,6 @@ from datetime import datetime
 from tasks.task import Task
 
 def main():
-    tasks_data = {
-        'id': int,
-        'description': str,
-        'status': str,
-        'createdAt': datetime,
-        'updatedAt': datetime.now(),
-    }
 
     tasks_status = ['todo', 'in-progress', 'done']
 

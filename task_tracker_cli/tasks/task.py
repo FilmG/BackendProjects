@@ -57,7 +57,8 @@ class Task:
         print(f"Updated status of task id {key} to {value}")
 
     def list_tasks(self, filter):
-        self.json_data = [task for task in self.json_data if task['status'] == filter]
+        if filter is not None:
+            self.json_data = [task for task in self.json_data if task['status'] == filter]
         for item in self.json_data:
             print(item)
 

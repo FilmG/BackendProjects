@@ -34,7 +34,7 @@ def main():
 
     # List Task
     listTask_parser = subparsers.add_parser("list", help="List all tasks")
-    listTask_parser.add_argument('status', choices=tasks_status, help='Task status')
+    listTask_parser.add_argument('status', choices=tasks_status, default=None, nargs='?', help='Task status')
 
     arg = parser.parse_args()
     tasks = Task()

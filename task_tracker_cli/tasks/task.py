@@ -9,7 +9,7 @@ class Task:
             self.json_data = []
 
     def add_task(self, task_description):
-        task_id = len(self.json_data)+1
+        task_id = self.json_data[len(self.json_data)-1]['id'] + 1
         self.json_data.append({
             'id': task_id,
             'description': task_description,
